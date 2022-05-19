@@ -21,7 +21,9 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        sh 'pip3 install --upgrade --force-reinstall "botocore>1.21.30" "boto3>1.18.30" "awscli>1.20.30"'
+        withPythonEnv('/Users/stacicho/.venv/bin') {
+          sh 'pip3 install --upgrade --force-reinstall "botocore>1.21.30" "boto3>1.18.30" "awscli>1.20.30"'
+        }
       }
     }
     stage('Build') {
