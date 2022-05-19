@@ -37,7 +37,7 @@ pipeline {
             '''
 
             sh '''export PATH="$HOME/.local/bin:$PATH"
-            /opt/homebrew/bin/aws cloudformation package --template endpoint-config-template.yml \
+            aws cloudformation package --template endpoint-config-template.yml \
                 --s3-bucket $ARTIFACT_BUCKET --output-template $EXPORT_TEMPLATE_NAME
             '''
 
