@@ -27,7 +27,7 @@ pipeline {
         //}
         withPythonEnv('python3.9') {
           sh 'pip3 install --upgrade --force-reinstall "botocore>1.21.30" "boto3>1.18.30" "awscli>1.20.30"'
-          sh 'pip3 install aws --target $HOME/.local/$SAGEMAKER_PROJECT_NAME_ID'
+          //sh 'pip3 install aws --target $HOME/.local/$SAGEMAKER_PROJECT_NAME_ID'
         }
       }
     }
